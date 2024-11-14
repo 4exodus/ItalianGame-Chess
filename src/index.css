@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 47.9 95.8% 53.1%;
+    --primary-foreground: 26 83.3% 14.1%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 47.9 95.8% 53.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.5s ease-out;
+}
+
+.animate-scale {
+  animation: scale 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.hover-lift {
+  transition: transform 0.2s ease-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+.glass-effect {
+  @apply bg-white/10 backdrop-blur-lg;
+}
+
+.chess-gradient {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.border-glow {
+  box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.1);
+  transition: box-shadow 0.2s ease-out;
+}
+
+.border-glow:hover {
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-amber-500/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-amber-500;
+}
